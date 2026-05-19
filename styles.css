@@ -2,9 +2,9 @@ body {
 
 font-family: Arial, sans-serif;
 
-color: #0ee31c;
+color: #131513;
 
-background-color: #ece2e2;
+background-color: #ffffff;
 
 margin: 0;
 
@@ -16,9 +16,9 @@ line-height: 1.6;
 
 header {
 
-background-color: #4CAF50;
+background-color: #2b632f;
 
-color: white;
+color: rgb(255, 255, 255);
 
 padding: 20px;
 
@@ -38,7 +38,7 @@ nav a {
 
 color: white;
 
-text-decoration: none;
+text-decoration:  bold;
 
 margin: 0 10px;
 
@@ -116,7 +116,7 @@ text-decoration: underline;
 
 img {
 
-border: 5px solid #4CAF50;
+border: 0 px solid #4CAF50;
 
 border-radius: 10px;
 
