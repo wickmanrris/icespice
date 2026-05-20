@@ -89,6 +89,8 @@ body {
 
 .section h2 {
     font-style: italic;
+    float: left;
+    font-weight: bold;
 }
 
 
@@ -118,6 +120,9 @@ body {
 .details {
     font-size: 12px;
     margin-top: 10px;
+    font-weight: bold;
+    color: black;
+
 }
 
 .price {
@@ -128,10 +133,11 @@ body {
 button {
     width: 100%;
     padding: 8px;
-    background: #2d9cdb;
+    background: #438ab3;
     border: none;
-    color: white;
+    color: rgb(99, 73, 148);
     cursor: pointer;
+
 }
 
      footer {
@@ -142,235 +148,284 @@ button {
       margin-top: 2rem;
     }
         
+        .search-bar {
+            margin: 20px 0;
+        }
 
+        .search-bar input {
+            width: 115%;
+            padding: 10px;
+            font-size: 16px;
+            border: 2px solid #444;
+            background: white;
+        }
+
+        label {
+            display: block;
+            font-size: 18px;
+        }
+
+
+  
 </style>
 
-<div class="section">
-    <h2>NOTORIOUSRRIS</h2>
+
+<div class="search-bar container my-4">
+    <input
+        type="text"
+        id="searchInput"
+        class="form-control"
+        placeholder="Search for cars..."
+        onkeyup="searchCars()"
+    >
 </div>
 
-<search class="search-bar">
-    <input type="text" placeholder="Search for cars...">
-</search>
 
+<script>
+function searchCars() {
+    // Get the search input value and convert to lowercase
+    const input = document.getElementById("searchInput").value.toLowerCase();
 
-    <div class="main-content">
-        
-        <div class="card-container">
+    // Select all car cards
+    const cards = document.querySelectorAll(".col-md-3");
 
-            <div class="card">
-                <img src="c:\Users\thako\Downloads\Extreme Widebody BMW G87 M2 Brooklyn Grey Beast__.jpg">
-                <p> BMW G87 M2</p>
-                <div class="details">
-                    SPECIFICATION: Interior Black, 4 Doors...<br>
-                    LOCATION: Gaborone, Botswana
-                </div>
-                <div class="price">P 1,599,000.00</div>
-                <button>Details</button>
-            </div>
+    // Loop through each card
+    cards.forEach(card => {
+        // Get the car title and description text
+        const title = card.querySelector(".card-title").textContent.toLowerCase();
+        const description = card.querySelector(".card-text").textContent.toLowerCase();
+
+        // Show card if title or description contains search text
+        if (title.includes(input) || description.includes(input)) {
+            card.style.display = "block";
+        } else {
+            card.style.display = "none";
+        }
+    });
+}
+</script>
+
+<div class="container my-5">
+  <div class="row g-4">
     
-            <div class="card">
-                <img src="c:\Users\thako\Downloads\Future car!!!! BMW M3 (F80).jpg">
-                <P>BMW M3 (F80)</P>
-                <div class="details">
-                    SPECIFICATION: Interior Grey, 4 Doors...<br>
-                    LOCATION: Gaborone, Botswana
-                </div>
-                <div class="price">P 1,199,000.00</div>
-                <button>Details</button>
-            </div>
-
-            <div class="card">
-                <img src="c:\Users\thako\Downloads\McKenna Porsche _ Beach day with the 930 Turbo 🏖️….jpg">
-                <p>Porsche 930 Turbo</p>
-                <div class="details">
-                    SPECIFICATION: Interior Beige, 4 Doors...<br>
-                    LOCATION: Gaborone, Botswana
-                </div>
-                <div class="price">P 1,375,000.00</div>
-                <button>Details</button>
-            </div>
- <div class="card">
-                <img src="c:\Users\thako\Downloads\BMW M5 CS.jpg">
-                <p>BMW M5 CS</p>
-                <div class="details">
-                    SPECIFICATION: Interior Black, 4 Doors...<br>
-                    LOCATION: Gaborone, Botswana
-                </div>
-                <div class="price">P 1,599,000.00</div>
-                <button>Details</button>
-            </div>
-
-            <div class="card">
-                <img src="c:\Users\thako\Downloads\Aston martin V12 vantage.jpg">
-                <p>Aston Martin V12 vantage</p>
-                <div class="details">
-                    SPECIFICATION: Interior Grey, 4 Doors...<br>
-                    LOCATION: Gaborone, Botswana
-                </div>
-                <div class="price">P 1,199,000.00</div>
-                <button>Details</button>
-            </div>
-            </div>
-             <div class="card">
-                <img src="c:\Users\thako\Downloads\for Aston Martin Vantage Carbon fiber body kit  Vantage upgrades V12 F1-style front and rear bumper.jpg">
-                <p>Aston Martin Vantage Carbon Fiber</p>
-                <div class="details">
-                    SPECIFICATION: Interior Grey, 4 Doors...<br>
-                    LOCATION: Gaborone, Botswana
-                </div>
-  <div class="price">P 1,199,000.00</div>
-                <button>Details</button>
-
-             </div>
-                 
- <div class="main-content">
-        
-        <div class="card-container">
-
-            <div class="card">
-                <img src="c:\Users\thako\Downloads\Austin-Healey 3000.jpg">
-                <p>Austin-Healey 3000</p>
-                <div class="details">
-                    SPECIFICATION: Interior Black, 2 Doors...<br>
-                    LOCATION: Gaborone, Botswana
-                </div>
-                <div class="price">P 1,799,000.00</div>
-                <button>Details</button>
-            </div>
     
-            <div class="card">
-                <img src="c:\Users\thako\Downloads\Monday Motivation.jpg">
-                <p>Porche Spider gt</p>
-                <div class="details">
-                    SPECIFICATION: Interior Grey, 2 Doors...<br>
-                    LOCATION: Gaborone, Botswana
-                </div>
-                <div class="price">P 5,000,000.00</div>
-                <button>Details</button>
-            </div>
-
-            <div class="card">
-                <img src="c:\Users\thako\Downloads\1987 Mercedes-Benz 560SL.jpg">
-                <p>Mercedes-Benz 560SL</p>
-
-                <div class="details">
-                    SPECIFICATION: Interior Beige, 4 Doors...<br>
-                    LOCATION: Gaborone, Botswana
-                </div>
-                <div class="price">P 2,275,000.00</div>
-                <button>Details</button>
-            </div>
- <div class="card">
-                <img src="c:\Users\thako\Downloads\Classic Cadillac Sedan deVille For Sale.jpg">
-                <p>Classic Cadillac Sedan deVille</p>
-                <div class="details">
-                    SPECIFICATION: Interior Black, 4 Doors...<br>
-                    LOCATION: Gaborone, Botswana
-                </div>
-                <div class="price">P 1,699,000.00</div>
-                <button>Details</button>
-            </div>
-
-            <div class="card">
-                <img src="c:\Users\thako\Downloads\Audi quattro Classic Cars for Sale _ Classic Trader.jpg">
-                <p>Audi Quattro</p>
-                <div class="details">
-                    SPECIFICATION: Interior Grey, 4 Doors...<br>
-                    LOCATION: Gaborone, Botswana
-                </div>
-                <div class="price">P 1,120,000.00</div>
-                <button>Details</button>
-            </div>
-            </div>
-             <div class="card">
-                <img src="c:\Users\thako\Downloads\3940718419423943.jpg">
-                <p>BMW M1</p>
-                <div class="details">
-                    SPECIFICATION: Interior Grey, 4 Doors...<br>
-                    LOCATION: Gaborone, Botswana
-                </div>
-  <div class="price">1 P510,000.00</div>
-                <button>Details</button>
-                 
-             
-
-              <div class="card">
-                <img src="c:\Users\thako\Downloads\Overfinch NEW 2022 Defender.jpg">
-                <p>Land Rover Defender</p>
-                <div class="details">
-                    SPECIFICATION: Interior Black, 4 Doors...<br>
-                    LOCATION: Gaborone, Botswana
-                </div>
-                <div class="price">P 1,799,000.00</div>
-                <button>Details</button>
-            </div>
-    
-            <div class="card">
-                <img src="c:\Users\thako\Downloads\GLS Larte design 🦈.jpg">
-                <p>Mercedes GLS600 Maybach</p>
-                <div class="details">
-                    SPECIFICATION: Interior Grey, 4 Doors...<br>
-                    LOCATION: Gaborone, Botswana
-                </div>
-                <div class="price">P 2,000,000.00</div>
-                <button>Details</button>
-            </div>
-
-            <div class="card">
-                <img src="c:\Users\thako\Downloads\Toyota LandCruiser 300 Series.jpg" alt=" Toyota LandCruiser 300 Series">
-                <p>Toyota LandCruiser 300 Series</p>
-
-                <div class="details">
-                    SPECIFICATION: Interior Beige, 4 Doors...<br>
-                    LOCATION: Gaborone, Botswana
-                </div>
-                <div class="price">P 1,275,000.00</div>
-                <button>Details</button>
-            </div>
- <div class="card">
-                <img src="c:\Users\thako\Downloads\Porsche Cayenne versus Macan - A Girls Guide to Cars.jpg">
-                <p>Porsche Cayenne versus Macan </p>
-                <div class="details">
-                    SPECIFICATION: Interior Black, 4 Doors...<br>
-                    LOCATION: Gaborone, Botswana
-                </div>
-                <div class="price">P 1,699,000.00</div>
-                <button>Details</button>
-            </div>
-
-            <div class="card">
-                <img src="c:\Users\thako\Downloads\Lets see all those Gladiators with lifts and bigger tires!.jpg">
-                <p>JEEP Gladiator</p>
-                <div class="details">
-                    SPECIFICATION: Interior Grey, 4 Doors...<br>
-                    LOCATION: Gaborone, Botswana
-                </div>
-                <div class="price">P 1,120,000.00</div>
-                <button>Details</button>
-            </div>
-            </div>
-             <div class="card">
-                <img src="c:\Users\thako\Downloads\COMPASS SPORT _MOSCA BRANCA_ -Ano_ 2018 -Motor 2_0….jpg">
-                <p>Jeep Compass</p>
-                <div class="details">
-                    SPECIFICATION: Interior Grey, 4 Doors...<br>
-                    LOCATION: Gaborone, Botswana
-                </div>
-  <div class="price">P510,000.00</div>
-                <button>Details</button>
-                 
-         
+    <div class="col-md-3">
+      <div class="card h-100">
+        <img src="c:\Users\thako\Downloads\Extreme Widebody BMW G87 M2 Brooklyn Grey Beast__.jpg" class="card-img-top" alt="BMW G87 M2">
+        <div class="card-body">
+          <h5 class="card-title">BMW G87 M2</h5>
+          <p class="card-text">SPECIFICATION: Interior Black, 4 Doors...<br>LOCATION: Gaborone, Botswana</p>
+          <p class="price">P 1,599,000.00</p>
+           <button class="btn btn-dark">Details</button>
         </div>
+      </div>
+    </div>
+
+
+    <div class="col-md-3">
+      <div class="card h-100">
+        <img src="c:\Users\thako\Downloads\BMW❤️_🔥.jpg" class="card-img-top" alt="BMW M3 (F80)">
+        <div class="card-body">
+          <h5 class="card-title">BMW M3 (G80)</h5>
+          <p class="card-text">SPECIFICATION: Interior Grey, 4 Doors...<br>LOCATION: Gaborone, Botswana</p>
+          <p class="price">P 1,199,000.00</p>
+           <button class="btn btn-dark">Details</button>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="col-md-3">
+      <div class="card h-100">
+        <img src="c:\Users\thako\Downloads\Monday Motivation.jpg" class="card-img-top" alt="Porsche 930 Turbo">
+        <div class="card-body">
+          <h5 class="card-title">Porsche 992 GT3 RS</h5>
+          <p class="card-text">SPECIFICATION: Interior Beige, 2 Doors...<br>LOCATION: Gaborone, Botswana</p>
+          <p class="price">P 4,375,000.00</p>
+           <button class="btn btn-dark">Details</button>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="col-md-3">
+      <div class="card h-100">
+        <img src="c:\Users\thako\Downloads\BMW M5 CS.jpg" class="card-img-top" alt="BMW M5 CS">
+        <div class="card-body">
+          <h5 class="card-title">BMW M5 CS</h5>
+          <p class="card-text">SPECIFICATION: Interior Black, 4 Doors...<br>LOCATION: Gaborone, Botswana</p>
+          <p class="price">P 1,599,000.00</p>
+           <button class="btn btn-dark">Details</button>
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="col-md-3">
+      <div class="card h-100">
+        <img src="c:\Users\thako\Downloads\Aston Martin V12 Vantage.jpg" class="card-img-top" alt="Aston Martin V12 Vantage">
+        <div class="card-body">
+          <h5 class="card-title">Aston Martin V12 Vantage</h5>
+          <p class="card-text">SPECIFICATION: Interior Grey, 2  Doors...<br>LOCATION: Gaborone, Botswana</p>
+          <p class="price">P 1,199,000.00</p>
+           <button class="btn btn-dark">Details</button>
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="col-md-3">
+      <div class="card h-100">
+        <img src="c:\Users\thako\Downloads\Austin-Healey 3000.jpg" class="card-img-top" alt="Austin-Healey 3000">
+        <div class="card-body">
+          <h5 class="card-title">Austin-Healey 3000</h5>
+          <p class="card-text">SPECIFICATION: Interior Black, 2 Doors...<br>LOCATION: Gaborone, Botswana</p>
+          <p class="price">P 1,799,000.00</p>
+          <button class="btn btn-dark">Details</button>
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="col-md-3">
+      <div class="card h-100">
+        <img src="c:\Users\thako\Downloads\1987 Mercedes-Benz 560SL.jpg" class="card-img-top" alt="Mercedes-Benz 560SL">
+        <div class="card-body">
+          <h5 class="card-title">Mercedes-Benz 560SL</h5>
+          <p class="card-text">SPECIFICATION: Interior Beige, 4 Doors...<br>LOCATION: Gaborone, Botswana</p>
+          <p class="price">P 2,275,000.00</p>
+          <button class="btn btn-dark">Details</button>
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="col-md-3">
+      <div class="card h-100">
+        <img src="c:\Users\thako\Downloads\Audi quattro Classic Cars for Sale _ Classic Trader.jpg" class="card-img-top" alt="Audi Quattro">
+        <div class="card-body">
+          <h5 class="card-title">Audi Quattro</h5>
+          <p class="card-text">SPECIFICATION: Interior Grey, 4 Doors...<br>LOCATION: Gaborone, Botswana</p>
+          <p class="price">P 1,120,000.00</p>
+           <button class="btn btn-dark">Details</button>
+        </div>
+      </div>
+    </div>
+
+ 
+    <div class="col-md-3">
+      <div class="card h-100">
+        <img src="c:\Users\thako\Downloads\3940718419423943.jpg" class="card-img-top" alt="BMW M1">
+        <div class="card-body">
+          <h5 class="card-title">BMW M1</h5>
+          <p class="card-text">SPECIFICATION: Interior Grey, 4 Doors...<br>LOCATION: Gaborone, Botswana</p>
+          <p class="price">P 510,000.00</p>
+          <button class="btn btn-dark">Details</button>
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="col-md-3">
+      <div class="card h-100">
+        <img src="c:\Users\thako\Downloads\Overfinch NEW 2022 Defender.jpg" class="card-img-top" alt="Land Rover Defender">
+        <div class="card-body">
+          <h5 class="card-title">Land Rover Defender</h5>
+          <p class="card-text">SPECIFICATION: Interior Black, 4 Doors...<br>LOCATION: Gaborone, Botswana</p>
+          <p class="price">P 1,799,000.00</p>
+          <button class="btn btn-dark">Details</button>
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="col-md-3">
+      <div class="card h-100">
+        <img src="c:\Users\thako\Downloads\Mercedes Maybach GLS 600 - Wiesbaden.jpg" class="card-img-top" alt="Mercedes GLS600 Maybach">
+        <div class="card-body">
+          <h5 class="card-title">Mercedes GLS600 Maybach</h5>
+          <p class="card-text">SPECIFICATION: Interior Grey, 4 Doors...<br>LOCATION: Gaborone, Botswana</p>
+          <p class="price">P 2,000,000.00</p>
+          <button class="btn btn-dark">Details</button>
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="col-md-3">
+      <div class="card h-100">
+        <img src="c:\Users\thako\Downloads\Toyota LandCruiser 300 Series.jpg" class="card-img-top" alt="Toyota LandCruiser 300 Series">
+        <div class="card-body">
+          <h5 class="card-title">Toyota LandCruiser 300 Series</h5>
+          <p class="card-text">SPECIFICATION: Interior Beige, 4 Doors...<br>LOCATION: Gaborone, Botswana</p>
+          <p class="price">P 1,275,000.00</p>
+          <button class="btn btn-dark">Details</button>
+        </div>
+      </div>
+    </div>
+
+                               
+    <div class="col-md-3">
+      <div class="card h-100">
+        <img src="c:\Users\thako\Downloads\Porsche Cayenne versus Macan - A Girls Guide to Cars.jpg" class="card-img-top" alt="Porsche Cayenne versus Macan">
+        <div class="card-body">
+          <h5 class="card-title">Porsche Cayenne versus Macan</h5>
+          <p class="card-text">SPECIFICATION: Interior Black, 4 Doors...<br>LOCATION: Gaborone, Botswana</p>
+          <p class="price">P 1,699,000.00</p>
+          <button class="btn btn-dark">Details</button>
+        </div>
+      </div>
+    </div>
+
+                              
+    <div class="col-md-3">
+      <div class="card h-100">
+        <img src="c:\Users\thako\Downloads\Lets see all those Gladiators with lifts and bigger tires!.jpg" alt="Jeep Gladiator">
+        <div class="card-body">
+          <h5 class="card-title">Jeep Gladiator</h5>
+          <p class="card-text">SPECIFICATION: Interior Black, 4 Doors...<br>LOCATION: Gaborone, Botswana</p>
+          <p class="price">P 1,699,000.00</p>
+          <button class="btn btn-dark">Details</button>
+        </div>
+      </div>
+    </div>
+
+                            
+    <div class="col-md-3">
+      <div class="card h-100">
+        <img src="c:\Users\thako\Downloads\COMPASS SPORT _MOSCA BRANCA_ -Ano_ 2018 -Motor 2_0….jpg" alt="Jeep Compass">
+        <div class="card-body">
+          <h5 class="card-title">Jeep Compass</h5>
+          <p class="card-text">SPECIFICATION: Interior Black, 4 Doors...<br>LOCATION: Gaborone, Botswana</p>
+          <p class="price">P 1,699,000.00</p>
+          <button class="btn btn-dark">Details</button>
+        </div>
+      </div>
+    </div>
+
+                              
+    <div class="col-md-3">
+      <div class="card h-100">
+        <img src="c:\Users\thako\Downloads\169518373469292112.jpg" class="card-img-top" alt="ford mustang gt">
+        <div class="card-body">
+          <h5 class="card-title">Ford mustang gt</h5>
+          <p class="card-text">SPECIFICATION: Interior Black, 4 Doors...<br>LOCATION: Gaborone, Botswana</p>
+          <p class="price">P 1,699,000.00</p>
+          <button class="btn btn-dark">Details</button>
+        </div>
+      </div>
+    </div>
 
 
 
-<p></p>
+  </div>
+</div>
 
 
 <footer> 
 
-<p>&copy; 2026 Notorious</p>
+<p>&copy; 2022 Notorious</p>
+
 
 </footer>
 

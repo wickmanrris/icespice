@@ -138,91 +138,116 @@ footer {
       background: #333;
       color: white;
       margin-top: 2rem;
-    }   
+
+    } 
+      .search-bar {
+            margin: 20px 0;
+        }
+
+        .search-bar input {
+            width: 115%;
+            padding: 10px;
+            font-size: 16px;
+            border: 2px solid #444;
+            background: white;
+        }
 </style>
+
+<div class="search-bar container my-4">
+    <input
+        type="text"
+        id="searchInput"
+        class="form-control"
+        placeholder="Search for cars..."
+        onkeyup="searchCars()"
+    >
+</div>
+
+
+<script>
+function searchCars() {
+   
+    const input = document.getElementById("searchInput").value.toLowerCase();
+
+
+    const cards = document.querySelectorAll(".col-md-3");
+
+    // Loop through each card
+    cards.forEach(card => {
+        // Get the car title and description text
+        const title = card.querySelector(".card-title").textContent.toLowerCase();
+        const description = card.querySelector(".card-text").textContent.toLowerCase();
+
+        // Show card if title or description contains search text
+        if (title.includes(input) || description.includes(input)) {
+            card.style.display = "block";
+        } else {
+            card.style.display = "none";
+        }
+    });
+}
+</script>
 
 <div class="section">
     <h2>NOTORIOUSRRIS</h2>
 </div>
 
-<search class="search-bar">
-    <input type="text" placeholder="Search for cars...">
-</search>
+  <div class="container my-5">
+  <div class="row g-4">
 
-
-    <div class="main-content">
-        
-        <div class="card-container">
-
-            <div class="card">
-                <img src="c:\Users\thako\Downloads\Austin-Healey 3000.jpg">
-                <p>Austin-Healey 3000</p>
-                <div class="details">
-                    SPECIFICATION: Interior Black, 2 Doors...<br>
-                    LOCATION: Gaborone, Botswana
-                </div>
-                <div class="price">P 1,799,000.00</div>
-                <button>Details</button>
-            </div>
-    
-            <div class="card">
-                <img src="c:\Users\thako\Downloads\Monday Motivation.jpg">
-                <p>Porche Spider gt</p>
-                <div class="details">
-                    SPECIFICATION: Interior Grey, 2 Doors...<br>
-                    LOCATION: Gaborone, Botswana
-                </div>
-                <div class="price">P 5,000,000.00</div>
-                <button>Details</button>
-            </div>
-
-            <div class="card">
-                <img src="c:\Users\thako\Downloads\1987 Mercedes-Benz 560SL.jpg">
-                <p>Mercedes-Benz 560SL</p>
-
-                <div class="details">
-                    SPECIFICATION: Interior Beige, 4 Doors...<br>
-                    LOCATION: Gaborone, Botswana
-                </div>
-                <div class="price">P 2,275,000.00</div>
-                <button>Details</button>
-            </div>
- <div class="card">
-                <img src="c:\Users\thako\Downloads\Classic Cadillac Sedan deVille For Sale.jpg">
-                <p>Classic Cadillac Sedan deVille</p>
-                <div class="details">
-                    SPECIFICATION: Interior Black, 4 Doors...<br>
-                    LOCATION: Gaborone, Botswana
-                </div>
-                <div class="price">P 1,699,000.00</div>
-                <button>Details</button>
-            </div>
-
-            <div class="card">
-                <img src="c:\Users\thako\Downloads\Audi quattro Classic Cars for Sale _ Classic Trader.jpg">
-                <p>Audi Quattro</p>
-                <div class="details">
-                    SPECIFICATION: Interior Grey, 4 Doors...<br>
-                    LOCATION: Gaborone, Botswana
-                </div>
-                <div class="price">P 1,120,000.00</div>
-                <button>Details</button>
-            </div>
-            </div>
-             <div class="card">
-                <img src="c:\Users\thako\Downloads\3940718419423943.jpg">
-                <p>BMW M1</p>
-                <div class="details">
-                    SPECIFICATION: Interior Grey, 4 Doors...<br>
-                    LOCATION: Gaborone, Botswana
-                </div>
-  <div class="price">1 P510,000.00</div>
-                <button>Details</button>
-                 
-
-         
+       <div class="col-md-3">
+      <div class="card h-100">
+        <img src="c:\Users\thako\Downloads\Austin-Healey 3000.jpg" class="card-img-top" alt="Austin-Healey 3000">
+        <div class="card-body">
+          <h5 class="card-title">Austin-Healey 3000</h5>
+          <p class="card-text">SPECIFICATION: Interior Black, 2 Doors...<br>LOCATION: Gaborone, Botswana</p>
+          <p class="price">P 1,799,000.00</p>
+          <button class="btn btn-dark">Details</button>
         </div>
+      </div>
+    </div>
 
+    
+    <div class="col-md-3">
+      <div class="card h-100">
+        <img src="c:\Users\thako\Downloads\1987 Mercedes-Benz 560SL.jpg" class="card-img-top" alt="Mercedes-Benz 560SL">
+        <div class="card-body">
+          <h5 class="card-title">Mercedes-Benz 560SL</h5>
+          <p class="card-text">SPECIFICATION: Interior Beige, 4 Doors...<br>LOCATION: Gaborone, Botswana</p>
+          <p class="price">P 2,275,000.00</p>
+          <button class="btn btn-dark">Details</button>
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="col-md-3">
+      <div class="card h-100">
+        <img src="c:\Users\thako\Downloads\Audi quattro Classic Cars for Sale _ Classic Trader.jpg" class="card-img-top" alt="Audi Quattro">
+        <div class="card-body">
+          <h5 class="card-title">Audi Quattro</h5>
+          <p class="card-text">SPECIFICATION: Interior Grey, 4 Doors...<br>LOCATION: Gaborone, Botswana</p>
+          <p class="price">P 1,120,000.00</p>
+           <button class="btn btn-dark">Details</button>
+        </div>
+      </div>
+    </div>
+
+ 
+    <div class="col-md-3">
+      <div class="card h-100">
+        <img src="c:\Users\thako\Downloads\3940718419423943.jpg" class="card-img-top" alt="BMW M1">
+        <div class="card-body">
+          <h5 class="card-title">BMW M1</h5>
+          <p class="card-text">SPECIFICATION: Interior Grey, 4 Doors...<br>LOCATION: Gaborone, Botswana</p>
+          <p class="price">P 510,000.00</p>
+          <button class="btn btn-dark">Details</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
 
 
 <p></p>
@@ -230,7 +255,8 @@ footer {
 
 <footer> 
 
-<p>&copy; 2026 Notorious</p>
+<p>&copy; 2022 Notorious</p>
+
 
 </footer>
 
